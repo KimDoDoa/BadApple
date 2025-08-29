@@ -1,1 +1,2 @@
-# BadApple
+# BadApple프로젝트
+
