@@ -87,31 +87,31 @@ def main():
             if not ret:
                 break
 
-            # Convert the frame to grayscale
+            
             gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-            # Resize the frame for console display
+            
             resized_frame = get_resized_image(gray_frame, ASCII_WIDTH)
 
-            # Convert the resized frame to ASCII art
+            
             ascii_art = convert_to_ascii(resized_frame, ASCII_CHARS)
 
-            # Reshape the string into lines to match the image dimensions
+            
             (h, w) = resized_frame.shape[:2]
             lines = [ascii_art[i:i + w] for i in range(0, len(ascii_art), w)]
             output = "\n".join(lines)
 
-            # Clear console and print the ASCII art
+            
             clear_console()
             print(output, end='')
 
-            # Wait for the next frame
+            
             time.sleep(frame_delay)
 
     except KeyboardInterrupt:
         print("\nPlayback stopped by user.")
     finally:
-        # Release the video capture object and destroy all windows
+        
         cap.release()
         cv2.destroyAllWindows()
         print("Video playback finished.")
