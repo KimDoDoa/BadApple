@@ -83,7 +83,7 @@ def main():
             
             ret, frame = cap.read()
 
-            # If frame is not read correctly, break the loop
+            
             if not ret:
                 break
 
